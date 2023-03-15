@@ -1,9 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "next/font/google";
+import logo from "../assets/logo.png";
 import styles from "@/styles/Home.module.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Row } from "antd";
 
 export default function Home() {
   return (
@@ -14,9 +13,40 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      </main>
+      <section className="Header">
+        <div style={{ width: "1920px", height: "auto" }} className="px-96">
+          <div className="flex justify-between items-center h-24  ">
+            <div className="logo">
+              <Image src={logo} alt="logo" className="h-16 w-72" />{" "}
+            </div>
+
+            <div className="flex gap-x-8 ">
+              <div className="flex flex-col justify-center items-center gap-y-1.5 text-sky-400">
+                <div className="text-lg ">Top</div>
+                <div className="text-xs">トップ</div>
+              </div>
+              <div className="flex flex-col justify-center items-center gap-y-1.5 w-20 h-24">
+                <div className="text-lg">Company</div>
+                <div className="text-xs">会社情報</div>
+              </div>
+              <div className="flex flex-col justify-center items-center gap-y-1.5 w-20 h-24">
+                <div className="text-lg">Service</div>
+                <div className="text-xs">サービス概要</div>
+              </div>
+              <div className="flex flex-col justify-center items-center gap-y-1.5 w-20 h-24">
+                <div className="text-lg">Works</div>
+                <div className="text-xs">サービス概要</div>
+              </div>
+              <div className="flex flex-col justify-center items-center gap-y-1.5 w-28 h-24 bg-sky-400">
+                <div className="text-lg">Contact</div>
+                <div className="text-xs">サービス概要</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="Footer"></section>
     </>
   );
 }
