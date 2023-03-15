@@ -1,9 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 import logo from "../assets/logo.png";
-import styles from "@/styles/Home.module.css";
-import { Row } from "antd";
-
+import bannerFather from "../assets/banner.png";
+import bannerChild from "../assets/imageBanner.png";
+import icon1 from "../assets/icon1.png";
+import streng1 from "../assets/streng1.png";
+import thanhtich from "../assets/thanh-tich.png";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 export default function Home() {
   return (
     <>
@@ -13,38 +16,380 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className="Header">
-        <div style={{ width: "1920px", height: "auto" }} className="px-96">
-          <div className="flex justify-between items-center h-24  ">
-            <div className="logo">
-              <Image src={logo} alt="logo" className="h-16 w-72" />{" "}
-            </div>
+      <div>
+        <div className=" header 2xl:pl-[384px] 2xl:pr-[404px] lg:pl-[190px] lg:pr-[200px]  lg:flex lg:justify-between lg:items-center lg:mb-[25px]">
+          <div className="logo lg:max-w-[282px] lg:h-[62px] max-w-[271px]">
+            <Image src={logo} alt="logo" />{" "}
+          </div>
 
-            <div className="flex gap-x-8 ">
-              <div className="flex flex-col justify-center items-center gap-y-1.5 text-sky-400">
-                <div className="text-lg ">Top</div>
-                <div className="text-xs">トップ</div>
+          <div className="lg:flex lg:gap-x-8 lg:max-w-[891px] hidden">
+            <div className="flex flex-col justify-center items-center gap-y-1.5 w-20 h-24 text-sky-400">
+              <div className="text-[15px] leading-[23px]">Top</div>
+              <div className="text-[10px] leading-[15px]">トップ</div>
+            </div>
+            <div className="flex flex-col justify-center items-center gap-y-1.5 w-20 h-24">
+              <div className="text-[15px] leading-[23px]">Company</div>
+              <div className="text-[10px] leading-[15px]">会社情報</div>
+            </div>
+            <div className="flex flex-col justify-center items-center gap-y-1.5 w-20 h-24">
+              <div className="text-[15px] leading-[23px]">Service</div>
+              <div className="text-[10px] leading-[15px]">サービス概要</div>
+            </div>
+            <div className="flex flex-col justify-center items-center gap-y-1.5 w-20 h-24">
+              <div className="text-[15px] leading-[23px]">Works</div>
+              <div className="text-[10px] leading-[15px]">サービス概要</div>
+            </div>
+            <div className="flex flex-col justify-center items-center gap-y-1.5 w-28 h-24 text-white bg-sky-400">
+              <div className="text-[15px] leading-[23px]">Contact</div>
+              <div className="text-[10px] leading-[15px]">サービス概要</div>
+            </div>
+          </div>
+
+          {/* <div className="menu-mobile xs:max-md:hidden xs:max-md:w-[61px] xs:max-md:h-[51px]">
+            <MenuFoldOutlined />
+          </div> */}
+        </div>
+        {/* 
+        <div className="banner px-[245px] mb-12">
+          <div className="relative ">
+            <Image src={bannerFather} alt="banner" />
+            <div className=" absolute top-1 flex flex-col justify-center items-center px-[237px]">
+              <div className="text-[45px] leading-[60px] max-w-[558px] mb-7 font-bold mt-5 ">
+                FEEL YOUR PLEASURE,{" "}
+                <div className="ml-2">FIND YOUR TREASURE</div>
               </div>
-              <div className="flex flex-col justify-center items-center gap-y-1.5 w-20 h-24">
-                <div className="text-lg">Company</div>
-                <div className="text-xs">会社情報</div>
+              <div className="text-[20px] leading-[30px] max-w-[560px] mb-11 text-center">
+                システム開発を通じ、それぞれにとっての「価値」を実現する
               </div>
-              <div className="flex flex-col justify-center items-center gap-y-1.5 w-20 h-24">
-                <div className="text-lg">Service</div>
-                <div className="text-xs">サービス概要</div>
+              <div className="text-[15px] leading-[23px] px-[45px] pt-[19px] pb-[15px] text-white bg-sky-400 flex justify-center items-center rounded-md mb-12">
+                Axalizeのサービス
               </div>
-              <div className="flex flex-col justify-center items-center gap-y-1.5 w-20 h-24">
-                <div className="text-lg">Works</div>
-                <div className="text-xs">サービス概要</div>
+              <Image src={bannerChild} alt="banner2" />
+            </div>
+          </div>
+        </div> */}
+
+        {/*} <div className="intro bg-sky-400  ">
+          <div className="px-96 pt-44 pb-16">
+            <div className="px-5 pt-1 pb-3.5">
+              <div className="title1 text-3xl font-bold mb-2.5  ">
+                Axalizeについて
               </div>
-              <div className="flex flex-col justify-center items-center gap-y-1.5 w-28 h-24 bg-sky-400">
-                <div className="text-lg">Contact</div>
-                <div className="text-xs">サービス概要</div>
+              <div className="title2 text-lg mb-3.5">Our Feature.</div>
+              <div className="desc text-base mb-9 ">
+                <div className="max-w-4xl">
+                  AxaLize = Axia(価値) +
+                  Actualize(実現する)は、日本人CEOを中心に設立されたベトナム拠点のICT企業です。
+                </div>
+                人それぞれにとっての「価値」を実現するシステム開発を「高品質」「ハイスピード」且つ、日本国内では実現が難しい「低コスト」で提供します。
+                お客様の専属の開発チームをベトナム弊社内に作り、ブリッジSEや日本人営業を通したやり取りを行いながら開発を行います。
+              </div>
+              <div className="flex justify-between">
+                <div
+                  className="intro bg-slate-50 flex "
+                  style={{ maxWidth: "545px" }}
+                >
+                  <div className="px-10 pb-8 ">
+                    <div className="px-0.5 pb-1 pt-8  ">
+                      <div className="flex justify-between mb-6">
+                        <div className="icon pt-3.5">
+                          <Image src={icon1} alt="icon1" />{" "}
+                        </div>
+                        <div className="01 text-3xl text-sky-300 font-bold w-10 h-11 text-center">
+                          01
+                        </div>
+                      </div>
+
+                      <div className="title text-xl font-bold m-4">
+                        ラボ型開発s
+                      </div>
+
+                      <div className="desc text-base m-4">
+                        成果物ではなく、エンジニアの人数と期間をベースにした開発を提供します。要件を固めずに契約が行えるため、柔軟に対応可能な形態で、明確なゴールのない業務（継続的な保守やメンテナンス等）向けの契約形態となります。
+                      </div>
+
+                      <div className="read-more text-base text-sky-500">
+                        Read More
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  className="intro bg-slate-50 flex "
+                  style={{ maxWidth: "545px" }}
+                >
+                  <div className="px-10 pb-8 ">
+                    <div className="px-0.5 pb-1 pt-8 max-w-lg ">
+                      <div className="flex justify-between mb-6">
+                        <div className="icon pt-3.5">
+                          <Image src={icon1} alt="icon1" />{" "}
+                        </div>
+                        <div className="01 text-3xl text-sky-300 font-bold w-10 h-11 text-center">
+                          01
+                        </div>
+                      </div>
+
+                      <div className="title text-xl font-bold m-4">
+                        ラボ型開発s
+                      </div>
+
+                      <div className="desc text-base m-4">
+                        成果物ではなく、エンジニアの人数と期間をベースにした開発を提供します。要件を固めずに契約が行えるため、柔軟に対応可能な形態で、明確なゴールのない業務（継続的な保守やメンテナンス等）向けの契約形態となります。
+                      </div>
+
+                      <div className="read-more text-base text-sky-500">
+                        Read More
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+
+        <div className="strength mt-14">
+          <div className="pt-14" style={{ padding: "0 405px" }}>
+            <div className="title text-3xl font-bold mb-2">Axalizeの強み</div>
+
+            <div className="feature text-lg text-gray-200 mb-12">
+              Our Feature
+            </div>
+            <div className="wrapper-content flex flex-wrap">
+              <div
+                className="wrapper-content mr-5 mb-12"
+                style={{ maxWidth: "545px" }}
+              >
+                <div className="container-content flex">
+                  <div className="img-content mr-5">
+                    <Image
+                      src={streng1}
+                      alt="streng1-img}"
+                      style={{ width: "140px", height: "140px" }}
+                    />
+                  </div>
+
+                  <div className="container-desc mt-1.5">
+                    <div className="title-content text-2xl font-bold mb-3">
+                      日本人CEOと少数精鋭の高品質
+                    </div>
+                    <div
+                      className="desc-content text-base"
+                      style={{ maxWidth: "374px" }}
+                    >
+                      日本人CEOや、日本語や日本のマナーの教育に加えて実際に日本で職務経験を積んだメンバーが在籍しており、意思疎通の失敗を防ぐことが可能です。
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="wrapper-content mr-5 mb-12"
+                style={{ maxWidth: "545px" }}
+              >
+                <div className="container-content flex">
+                  <div className="img-content mr-5">
+                    <Image
+                      src={streng1}
+                      alt="streng1-img}"
+                      style={{ width: "140px", height: "140px" }}
+                    />
+                  </div>
+
+                  <div className="container-desc mt-1.5">
+                    <div className="title-content text-2xl font-bold mb-3">
+                      短期間での開発
+                    </div>
+                    <div
+                      className="desc-content text-base"
+                      style={{ maxWidth: "374px" }}
+                    >
+                      若くて能力の高いIT技術者で溢れているベトナムでオフショア開発を行うで「高品質」に加え、日本では実現しずらい「低コスト」と「スピード」の全てを満たす開発が実現可能となっております。
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="wrapper-content mr-5 mb-12"
+                style={{ maxWidth: "545px" }}
+              >
+                <div className="container-content flex">
+                  <div className="img-content mr-5">
+                    <Image
+                      src={streng1}
+                      alt="streng1-img}"
+                      style={{ width: "140px", height: "140px" }}
+                    />
+                  </div>
+
+                  <div className="container-desc mt-1.5">
+                    <div className="title-content text-2xl font-bold mb-3">
+                      柔軟な対応・契約形態
+                    </div>
+                    <div
+                      className="desc-content text-base"
+                      style={{ maxWidth: "374px" }}
+                    >
+                      ベトナムではアジャイルでの開発が主流となっており、仕様の見直し・変更等が発生した際でも、スピーディーかつ柔軟に対応できます。
+                      また契約面でも1ヶ月1名からといった細かい単位でのご契約が可能です。
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="wrapper-content mr-5 mb-12"
+                style={{ maxWidth: "545px" }}
+              >
+                <div className="container-content flex">
+                  <div className="img-content mr-5">
+                    <Image
+                      src={streng1}
+                      alt="streng1-img}"
+                      style={{ width: "140px", height: "140px" }}
+                    />
+                  </div>
+
+                  <div className="container-desc mt-1.5">
+                    <div className="title-content text-2xl font-bold mb-3">
+                      日本提携会社との連携
+                    </div>
+                    <div
+                      className="desc-content text-base"
+                      style={{ maxWidth: "374px" }}
+                    >
+                      日本提携会社との連携
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="achivements">
+          <div className="title text-center mb-2 font-bold">開発実績</div>
+          <div className="sub text-center mb-6 text-gray-300">
+            Our Achivements
+          </div>
+          <div
+            className="wapper-content flex mb-28"
+            style={{ padding: "0 405px" }}
+          >
+            <div className="image-content mr-9">
+              <Image
+                src={thanhtich}
+                alt="thanhtich"
+                style={{
+                  width: "445px",
+                  height: "300px",
+                  objectFit: "cover",
+                }}
+              />
+            </div>
+
+            <div className="container-content">
+              <div
+                className="desc-content mb-24 "
+                style={{ maxWidth: "627px" }}
+              >
+                様々なエンジニアを擁するAxalizeではWebアプリ・モバイルアプリをメインに、Webサイトや多くの開発案件を手がけています。
+                最近ではRPA(Robotic Process
+                Automation)の開発にも力を入れております。
+              </div>
+              <div
+                className="read-more text-center mb-8 py-2 text-base bg-sky-400 text-white font-bold "
+                style={{ maxWidth: "270px" }}
+              >
+                Read More
+              </div>
+              <div className="wapper-data flex">
+                <div className="container-data mr-7">
+                  <div className="number-data text-3xl font-bold mb-1">47+</div>
+                  <div className="sub-data text-base">完了したプロジェクト</div>
+                </div>
+                <div className="container-data mr-20">
+                  <div className="number-data text-3xl font-bold mb-1">14+</div>
+                  <div className="sub-data">世界中のお客様</div>
+                </div>
+                <div className="container-data">
+                  <div className="number-data text-3xl font-bold mb-1">100</div>
+                  <div className="sub-data">リピート率</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="voice-customer">
+          <div className="title text-center mb-2 font-bold text-3xl">
+            お客様の声
+          </div>
+          <div className="sub text-center mb-6 text-gray-300">
+            What Our Clients Say
+          </div>
+          <div className="title text-center mb-14 text-base">
+            弊社をご利用いただいたお客様からいただいたお声を一部紹介させていただきます。
+          </div>
+
+          <div
+            className="wrapper-card-customer-comment flex justify-between mb-7"
+            style={{ padding: "0 405px" }}
+          >
+            <div
+              className="border rounded"
+              style={{ padding: "63px 42px 69px 61px", maxWidth: "540px" }}
+            >
+              <div className="wrapper-title-comment flex mb-4">
+                <div
+                  className="avatar-cus w-15 rounded-full bg-sky-400 mr-2.5"
+                  style={{ width: "70px", height: "70px" }}
+                ></div>
+                <div className="wrapper-rate">
+                  <div
+                    className="rate text-2xl  font-bold "
+                    style={{ maxWidth: "336px" }}
+                  >
+                    優秀な開発チームとフレキシブ ルなリソース調整
+                  </div>
+                  <div className="from-company text-base  ">
+                    株式会社シー・コネクト / 嶽本 泰伸 様
+                  </div>
+                </div>
+              </div>
+
+              <div className="comment text-base" style={{ maxWidth: "437px" }}>
+                非常に不具合の少ない開発をしていただけているので、バグ修正なども従来のシステム開発より少なくなりました。また忙しい時期にアサインメンバーを増やして頂いたり、とても柔軟にリソース調整にご対応頂けるので大変助かっております。
+              </div>
+            </div>
+            <div
+              className="border rounded"
+              style={{ padding: "63px 42px 69px 61px", maxWidth: "540px" }}
+            >
+              <div className="wrapper-title-comment flex mb-4">
+                <div
+                  className="avatar-cus w-15 rounded-full bg-sky-400 mr-2.5"
+                  style={{ width: "70px", height: "70px" }}
+                ></div>
+                <div className="wrapper-rate">
+                  <div
+                    className="rate text-2xl  font-bold "
+                    style={{ maxWidth: "336px" }}
+                  >
+                    優秀な開発チームとフレキシブ ルなリソース調整
+                  </div>
+                  <div className="from-company text-base  ">
+                    株式会社シー・コネクト / 嶽本 泰伸 様
+                  </div>
+                </div>
+              </div>
+
+              <div className="comment text-base" style={{ maxWidth: "437px" }}>
+                非常に不具合の少ない開発をしていただけているので、バグ修正なども従来のシステム開発より少なくなりました。また忙しい時期にアサインメンバーを増やして頂いたり、とても柔軟にリソース調整にご対応頂けるので大変助かっております。
+              </div>
+            </div>
+          </div>
+        </div> */}
+      </div>
 
       <section className="Footer"></section>
     </>
